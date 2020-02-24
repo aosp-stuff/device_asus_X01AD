@@ -27,6 +27,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=4m \
     dalvik.vm.heapstartsize=16m
 
+# Utils
+ifneq ($(findstring aosp, $(TARGET_PRODUCT)),)
+$(call inherit-product, $(LOCAL_PATH)/utils.mk)
+endif
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
