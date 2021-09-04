@@ -402,6 +402,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
+# Source
+ifneq ($(findstring aosp, $(TARGET_PRODUCT)),)
+PRODUCT_HOST_PACKAGES += \
+    aapt2 \
+    avbtool \
+    brotli \
+    debugfs \
+    signapk \
+    zipalign
+endif
+
 # Telephony
 PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
