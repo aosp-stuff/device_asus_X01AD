@@ -42,6 +42,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 
 # Inherit from X01AD device
 $(call inherit-product, device/asus/X01AD/device.mk)
+$(call inherit-product, device/asus/X01AD/device-hidl.mk)
 
 # Device identifiers.
 PRODUCT_NAME := aosp_X01AD
