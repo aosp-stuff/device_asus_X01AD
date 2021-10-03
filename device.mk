@@ -43,6 +43,11 @@ TARGET_OTA_ASSERT_DEVICE := X01A,X01AD
 TARGET_SCREEN_HEIGHT := 1520
 TARGET_SCREEN_WIDTH := 720
 
+ifneq ($(findstring aosp, $(TARGET_PRODUCT)),)
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/msm8996
+endif
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
